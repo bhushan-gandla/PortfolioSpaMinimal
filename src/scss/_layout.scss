@@ -1,0 +1,45 @@
+html{
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+   scroll-snap-type: y mandatory;
+   scroll-padding-top: var(--roles-y);
+}
+:root{
+    --child-scroll-snap-align: unset; //start
+}
+.child {
+    scroll-snap-align: var(--child-scroll-snap-align);
+    display: block;
+    height: 100vh;
+    // .first-child{
+    //     position: static;
+    //     top:0px;
+    //     left: 0px;
+    //     right: 100vw;
+    //     // bottom: 100vh;
+    // }
+}
+.h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+section{
+    --heading-height: 10.75rem;
+    .heading{
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+        padding: 3rem 0;
+        margin: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        font-size: 4rem;
+    }
+    .content{
+        height: calc(100vh - var(--heading-height));
+        position: relative;
+        top: var(--heading-height);
+    }
+}

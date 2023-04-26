@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { portfolioItems } from './portfolio.constants';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
+  portfolioItems = portfolioItems;
+  // getIndex: number;
+  
   constructor() { }
-
+  
   ngOnInit(): void {
+    console.log(this.portfolioItems);
+  }
+
+  goFullScreen(event: MouseEvent){
+    console.log(event);
   }
 
 }

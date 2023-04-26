@@ -1,1 +1,76 @@
-<p>portfolio works!</p>
+<div class="vh-100 position-relative">
+    <div class="">
+        <h2 class="h1 heading text-secondary">
+            <span>portfolio </span>
+            <span>portfolio </span>
+            <span class="text-dark">portfolio </span>
+            <span>portfolio </span>
+            <span>portfolio </span>
+            <span>portfolio </span>
+            <span>portfolio </span>
+        </h2>
+    </div>
+    <div class="content position-relative">
+        <ul class="list-unstyled portfolio-list" >
+            <li *ngFor='let portfolioItem of portfolioItems; let i = index;'>
+                <div class="portfolio-inner-wrapper" (click)="goFullScreen($event)">
+                    <div class="image-wrapper">
+                        <img [src]="portfolioItem.imageSrc" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="description-wrapper">
+                        dsf
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                sad 2
+            </li>
+            <li>
+                sad 3
+            </li>
+            <li>
+                sad 4
+            </li>
+            <li>
+                sad 5
+            </li> -->
+        </ul>
+        <!-- <ng-container *ngFor='let portfolioItem of portfolioItems'>
+            {{portfolioItem.name}}
+        </ng-container> -->
+    </div>
+</div>
+
+
+
+
+<!-- <div id="carouselExampleCaptions" class="carousel slide portfolio-carousel" data-bs-ride="false">
+    <div class="carousel-inner">
+        <ng-container *ngFor='let portfolioItem of portfolioItems; let i = index;'>
+            <div class="carousel-item bg-secondary" [ngClass]="{'active': i === 0}">
+              <img [src]="portfolioItem.imageSrc" class="d-block w-50" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>{{portfolioItem.name}}</h5>
+
+                <ng-container *ngFor='let tool of portfolioItem.toolsUsed'>
+                    <li class="tool-item" [class]="tool.toolClass">
+                        <div class="icon"></div>
+                        <div class="tool-name"> 
+                            {{tool.toolName}}
+                        </div>
+                    </li>
+                </ng-container>
+
+              </div>
+            </div>
+        </ng-container>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->

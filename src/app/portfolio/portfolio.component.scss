@@ -1,3 +1,10 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+
+
 // .portfolio-carousel{
 //     height: 100%;
 //     .carousel-inner{
@@ -6,41 +13,203 @@
 // }
 
 .portfolio-list{
-    --portfolio-item-height: 36rem;
-    --portfolio-item-width: 33vw;
-    // display: flex;
+    --portfolio-item-height: 100%;
+    --portfolio-item-width: 100vw;
+    margin-bottom: 0;
     white-space: nowrap;
     overflow-x: scroll;
+    overflow-y: hidden;
     position: absolute;
     left: 0;
     right: 0;
-    // transform: translate(20vw, 0px);
-    padding-left: calc(var(--portfolio-item-width) / 2);
-    li{
+    padding-left: 0;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+    display: flex;
+
+    > li{
         display: inline-block;
-        padding: 2rem;
+        // padding: 2rem;
         width: var(--portfolio-item-width);
         height: var(--portfolio-item-height);
         flex-shrink: 0;
-
+        scroll-snap-align: center;
+        margin-right: 4rem;
+        
         .portfolio-inner-wrapper{
-            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='2' stroke-dasharray='2%2c 9' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-            height: 100%;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            .image-wrapper{
-                height: 70%;
+            background-color: #fff;
+            width: var(--portfolio-item-width);
+            height: var(--portfolio-item-height);
+            position: relative;
+            // transition: position 1s linear, height 2s linear 4s, width 2s linear 4s, inset 2s linear 4s;
+            transition: all 2s ease-in-out;
+            container-type: inline-size;
+      
+            
+            .border-wrapper{
+                padding: 2.5rem;
+                background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23333' stroke-width='2' stroke-dasharray='2%2c 9' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
                 display: flex;
-                align-self: center;
+                flex-direction: column;
+                height: 100%;
+                width: 100%;
+                position: relative;
+            }
+            .overlay-fullscreen-trigger{
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                // display: none;
+            }
+            .image-wrapper{
+                position: absolute;
+                top: 2.5rem;
+                right: 0;
+                height: 45%;
+                display: flex;
+                align-items: center;
                 justify-content: center;
+                order: 1;
+                margin-bottom: 2rem;
                 img{
                     flex-shrink: 0;
+                    height: 100%;
                 }
             }
             .description-wrapper{
-                height: 30%;
+                // height: 30%;
+                order: 2;
+                .project-name{
+                    font-size: 1.688rem;
+                    font-weight: 600;
+                }
+                .client-name{
+                    font-size: 1.125rem;
+                    margin-bottom: 1.5rem;
+                }
             }
+            .text-container{
+                opacity: 0;
+                display: none;
+            }
+            .skills-list{
+                order: 3;
+            }
+            
+           
+    
         }
+
+        --left-container-width: 60%;
+        @container (min-width: 600px) {
+                .image-wrapper{
+                
+                    right: 50px;
+                    // width: calc(100% - var(--left-container-width));
+                    background-color: red;
+                    // height: 50%;
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
+                    order: 1;
+                    // margin-bottom: 2rem;
+                    // img{
+                    //     flex-shrink: 0;
+                    //     height: 100%;
+                    // }
+                }
+                .description-wrapper{
+                    // height: 30%;
+                    order: 2;
+                    // .project-name{
+                    //     font-size: 1.688rem;
+                    //     font-weight: 600;
+                    // }
+                    // .client-name{
+                    //     font-size: 1.125rem;
+                    //     margin-bottom: 1.5rem;
+                    // }
+                }
+                .text-container{
+                    opacity: 1;
+                    display: block;
+                }
+                .skills-list{
+                    order: 3;
+                }
+        }
+        
+    }
+
+    @include media-breakpoint-up(md){
+        --portfolio-item-height: 60vh;
+        --portfolio-item-width: 29vw;
+        padding-left: calc(var(--portfolio-item-width) / 2);
     }
 }
+
+.tool-item{
+    background-color: var(--skills-pill-bg-color);
+    height: 1.5rem;
+    border-radius: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    margin: 0px 0.625rem 0.625rem 0px;
+    .icon{
+    //   background-color: var(--skills-pill-img-bg-color) ;
+      height: 1.5rem;
+      width: 1.5rem;
+    //   border-radius: 50%;
+      background-size: 1.188rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 0.25rem;
+    }
+    .tool-name{
+      padding: 0.125rem 0.5rem 0.125rem 0.188rem;
+      font-size: 0.813rem;
+    }
+    &.adobe-xd .icon{ 
+      background-image: url("../../assets/adobeXd.svg");
+      background-size: 0.875rem;
+    }
+    &.adobe-illustrator .icon{
+      background-image: url("../../assets/adobeIllustrator.svg");
+      background-size: 0.875rem;
+    }
+    &.adobe-photoshop .icon{
+      background-image: url("../../assets/adobePhotoshop.svg");
+      background-size: 0.875rem;
+    }
+    &.zeplin .icon{ 
+      background-image: url("../../assets/zeplin.svg");
+    }
+    &.html .icon{ 
+      background-image: url("../../assets/html5.svg");
+      background-size: 0.938rem;
+    }
+    &.scss .icon{ 
+      background-image: url("../../assets/sass.svg");
+      background-size: 1rem;
+    }
+    &.bootstrap-4 .icon{ 
+      background-image: url("../../assets/bootstrap.svg");
+    }
+    &.javascript .icon{ 
+      background-image: url("../../assets/javaScript.svg");
+      background-position: 0px -1px;
+    }
+    &.angular .icon{ 
+      background-image: url("../../assets/angular.svg");
+    }
+    &.css .icon{ 
+      background-image: url("../../assets/css.svg");
+      background-size: 0.813rem;
+    }
+    &.no-icon {
+      padding-left: 0.5rem;
+      .icon{ 
+        display: none;
+      }
+    }
+  }

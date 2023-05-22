@@ -2,10 +2,10 @@ html{
     scroll-snap-type: mandatory;
     scroll-snap-points-y: repeat(100vh);
    scroll-snap-type: y mandatory;
-   scroll-padding-top: var(--roles-y);
+//    scroll-padding-top: var(--roles-y);
 }
 :root{
-    --child-scroll-snap-align: unset; //start
+    --child-scroll-snap-align: start; //start
 }
 .child {
     scroll-snap-align: var(--child-scroll-snap-align);
@@ -25,21 +25,28 @@ html{
     letter-spacing: 1px;
 }
 section{
-    --heading-height: 10.75rem;
+    --heading-height: 7.5rem;
     .heading{
         white-space: nowrap;
         overflow: hidden;
         width: 100%;
-        padding: 3rem 0;
+        padding: 2rem 0;
         margin: 0;
         position: absolute;
         left: 0;
         right: 0;
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .content{
         height: calc(100vh - var(--heading-height));
         position: relative;
         top: var(--heading-height);
+    }
+    @include media-breakpoint-up(md){
+        --heading-height: 10.75rem;
+        .heading{
+            padding: 3rem 0;
+            font-size: 4rem;
+        }
     }
 }

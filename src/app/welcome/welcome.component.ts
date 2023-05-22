@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
-import { ScrollService } from '../services/scroll-service';
+// import { ScrollService } from '../services/scroll-service';
 import { ViewportRuler } from '@angular/cdk/scrolling';
 
 

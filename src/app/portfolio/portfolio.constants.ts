@@ -1,6 +1,6 @@
 export const portfolioItems: any[] = [
     {
-      name: 'EXOS Design System',
+      name: 'Design System',
       imageSrc: 'assets/design-system@2x.png',
       id: 'exos-design-system',
       value: 1,
@@ -58,7 +58,7 @@ export const portfolioItems: any[] = [
       ]
     },
     {
-      name: 'EXOS Loan Servicing',
+      name: 'Loan Servicing',
       imageSrc: 'assets/servicing@2x.png',
       id: 'exos-loan-servicing',
       value: 1,
@@ -97,29 +97,29 @@ export const portfolioItems: any[] = [
       ]
 
     },
-    {
-      name: 'EXOS Ard',
-      imageSrc: 'assets/ard-exploded-iso.png',
-      id: 'exos-ard',
-      value: 2,
-      explosiveDesign: "true",
-      content: '<p class="t-18">EXOS Ard is a tool which is used to manage records for multiple users.</p><p class="t-18">As a UI Designer for this project, I collaborated with project stakeholders like project managers, product managers, users, business analysts and architects.</p>',
-      client: "ServiceLink",
-      clicked: false,
-      toolsUsed: [
-        {
-          toolName: 'Adobe XD',
-          toolClass: 'adobe-xd'
-        },
-        {
-          toolName: 'Zeplin',
-          toolClass: 'zeplin'
-        }
-      ]
+    // {
+    //   name: 'EXOS Ard',
+    //   imageSrc: 'assets/ard-exploded-iso.png',
+    //   id: 'exos-ard',
+    //   value: 2,
+    //   explosiveDesign: "true",
+    //   content: '<p class="t-18">EXOS Ard is a tool which is used to manage records for multiple users.</p><p class="t-18">As a UI Designer for this project, I collaborated with project stakeholders like project managers, product managers, users, business analysts and architects.</p>',
+    //   client: "ServiceLink",
+    //   clicked: false,
+    //   toolsUsed: [
+    //     {
+    //       toolName: 'Adobe XD',
+    //       toolClass: 'adobe-xd'
+    //     },
+    //     {
+    //       toolName: 'Zeplin',
+    //       toolClass: 'zeplin'
+    //     }
+    //   ]
 
-    },
+    // },
     {
-      name: 'EXOS Underwriter Dashboard',
+      name: 'Underwriter Dashboard',
       imageSrc: 'assets/uw-dashboard.png',
       id: 'exos-underwriter-dashoard',
       value: 2,
@@ -171,7 +171,7 @@ export const portfolioItems: any[] = [
 
     },
     {
-      name: 'EXOS Valuation Suite',
+      name: 'Valuation Suite',
       imageSrc: 'assets/exos-suite@2x.png',
       id: 'exos-valuation-suite',
       value: 1,
@@ -295,54 +295,54 @@ export const portfolioItems: any[] = [
       ]
 
     },
-    {
-      name: 'EXOS Style guide',
-      imageSrc: 'assets/style-guide.png',
-      id: 'exos-style-guide',
-      value: 2,
-      content: '<p class="t-18">While working at ServiceLink, I was tasked with creating a Design System. As the sole contributor in the early stages of this project, I designed mock ups and created design standards. I had to design mock ups and create designing standards. I also worked on a few POCs to showcase scroll effect and implement pixel perfect web templates. </p>',
-      client: "ServiceLink",
-      clicked: false,
-      toolsUsed: [
-        {
-          toolName: 'Adobe XD',
-          toolClass: 'adobe-xd'
-        },
-        {
-          toolName: 'Zeplin',
-          toolClass: 'zeplin'
-        },
-        {
-          toolName: 'HTML 5',
-          toolClass: 'html'
-        },
-        {
-          toolName: 'SCSS',
-          toolClass: 'scss'
-        },
-        {
-          toolName: 'Bootstrap 3',
-          toolClass: 'bootstrap-4'
-        },
-        {
-          toolName: 'JavaScript',
-          toolClass: 'javascript'
-        },
-        {
-          toolName: 'Information Architecture',
-          toolClass: 'no-icon'
-        },
-        {
-          toolName: 'Wire framing',
-          toolClass: 'no-icon'
-        },
-        {
-          toolName: 'Site Map',
-          toolClass: 'no-icon'
-        }
-      ]
+    // {
+    //   name: 'EXOS Style guide',
+    //   imageSrc: 'assets/style-guide.png',
+    //   id: 'exos-style-guide',
+    //   value: 2,
+    //   content: '<p class="t-18">While working at ServiceLink, I was tasked with creating a Design System. As the sole contributor in the early stages of this project, I designed mock ups and created design standards. I had to design mock ups and create designing standards. I also worked on a few POCs to showcase scroll effect and implement pixel perfect web templates. </p>',
+    //   client: "ServiceLink",
+    //   clicked: false,
+    //   toolsUsed: [
+    //     {
+    //       toolName: 'Adobe XD',
+    //       toolClass: 'adobe-xd'
+    //     },
+    //     {
+    //       toolName: 'Zeplin',
+    //       toolClass: 'zeplin'
+    //     },
+    //     {
+    //       toolName: 'HTML 5',
+    //       toolClass: 'html'
+    //     },
+    //     {
+    //       toolName: 'SCSS',
+    //       toolClass: 'scss'
+    //     },
+    //     {
+    //       toolName: 'Bootstrap 3',
+    //       toolClass: 'bootstrap-4'
+    //     },
+    //     {
+    //       toolName: 'JavaScript',
+    //       toolClass: 'javascript'
+    //     },
+    //     {
+    //       toolName: 'Information Architecture',
+    //       toolClass: 'no-icon'
+    //     },
+    //     {
+    //       toolName: 'Wire framing',
+    //       toolClass: 'no-icon'
+    //     },
+    //     {
+    //       toolName: 'Site Map',
+    //       toolClass: 'no-icon'
+    //     }
+    //   ]
 
-    },
+    // },
     {
       name: 'Toblerone - Stop Motion',
       imageSrc: 'assets/toblerone.jpg',

@@ -7,9 +7,16 @@ import { portfolioItems } from './portfolio.constants';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
+  
 
   portfolioItems = portfolioItems;
 
+  top: number = 0;
+  left: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+  width: number = 0;
+  height: number = 0;
  
   // getIndex: number;
   
@@ -26,18 +33,18 @@ export class PortfolioComponent implements OnInit {
     console.log(parentElement);
 
     const rect = parentElement.getBoundingClientRect();
-    const top = rect.top;
+    this.top = rect.top;
+    this.left = rect.left;
+    this.right = rect.right;
+    this.bottom = rect.bottom;
+    this.width = rect.width;
+    this. height = rect.height;
 
-    // const top = parentElement.offsetTop;
-    const left = parentElement.offsetLeft;
-    const right = left + parentElement.offsetWidth;
-    const bottom = top + parentElement.offsetHeight;
-
-    console.log(top + " "  + right  + " "  +  bottom + " "  + left) ;
+    console.log(this.top + " "  + this.right  + " "  +  this.bottom + " "  + this.left + " " + this.width + " " + this.height) ;
  
     // const button = this.elRef.nativeElement.querySelector('button');
-    this.renderer.setStyle(parentElement, 'top', top + "px");
-    this.renderer.setStyle(parentElement, 'left', left + "px");
+    this.renderer.setStyle(parentElement, 'top', this.top + "px");
+    this.renderer.setStyle(parentElement, 'left', this.left + "px");
     this.renderer.setStyle(parentElement, 'position', 'fixed');
     
     // this.renderer.setStyle(parentElement, 'right', right + "px");
@@ -77,6 +84,40 @@ export class PortfolioComponent implements OnInit {
     // const className = event.target.classList[0];
     // console.log(event.target);
     
+  }
+
+  exitFullScreen(portfolioItem: any, event: MouseEvent){
+    const element = event.target as HTMLElement;
+    // console.log(element);
+
+    const parentElement = element.parentNode as HTMLElement;
+    console.log(this.top + " "  + this.right  + " "  +  this.bottom + " "  + this.left + " " + this.width + " " + this.height) ;
+
+    this.renderer.setStyle(parentElement, 'height', this.height + "px");
+    this.renderer.setStyle(parentElement, 'width', this.width + "px");
+
+    this.renderer.setStyle(parentElement, 'z-index', '1');
+    
+    this.renderer.setStyle(parentElement, 'top', this.top + "px");
+    this.renderer.setStyle(parentElement, 'left', this.left + "px");
+    setTimeout(() => {
+      //   // code to be executed after a delay
+        // portfolioItem.clicked = !portfolioItem.clicked; 
+        // this.renderer.setStyle(parentElement, 'top', this.top + "px");
+        // this.renderer.setStyle(parentElement, 'left', this.left + "px");
+        this.renderer.setStyle(parentElement, 'position', 'static');
+        
+      }, 2000);
+      // this.renderer.setStyle(parentElement, 'position', 'static');
+
+
+    // setTimeout(() => {
+    //   this.renderer.setStyle(parentElement, 'position', 'static');
+
+        
+    //   }, 500);
+
+
   }
   event(event: any) {
     throw new Error('Method not implemented.');

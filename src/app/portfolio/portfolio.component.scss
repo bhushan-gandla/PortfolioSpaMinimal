@@ -15,6 +15,7 @@
 .portfolio-list{
     --portfolio-item-height: 100%;
     --portfolio-item-width: 100vw;
+    --transition-type: ease-out;
     margin-bottom: 0;
     white-space: nowrap;
     overflow-x: scroll;
@@ -43,7 +44,7 @@
             height: var(--portfolio-item-height);
             position: relative;
             // transition: position 1s linear, height 2s linear 4s, width 2s linear 4s, inset 2s linear 4s;
-            transition: height 2s ease-in-out, width 2s ease-in-out, position 2s ease-in-out, top 2s ease-in-out,  left 2s ease-in-out ;
+            transition: height 2s var(--transition-type), width 2s var(--transition-type), position 2s var(--transition-type), top 2s var(--transition-type),  left 2s var(--transition-type) ;
             container-type: inline-size;
       
             
@@ -54,7 +55,7 @@
                 flex-direction: column;
                 position: absolute;
                 inset: 0;
-                // transition: inset 0.2s ease-in-out;
+                // transition: inset 0.2s var(--transition-type);
             }
             .overlay-fullscreen-trigger{
                 position: absolute;
@@ -74,7 +75,7 @@
                 margin-bottom: 2rem;
                 img{
                     flex-shrink: 0;
-                    height: 100%;
+                    width: 80%;
                 }
             }
             .description-wrapper{
@@ -91,13 +92,24 @@
                     margin-bottom: 1.5rem;
                 }
             }
-            .text-container{
+            .text-container {
                 opacity: 0;
-                display: none;
+             
             }
             .skills-list{
               opacity: 0;
               display: none;
+            }
+            .btn-exit{
+              border-radius: 50%;
+              padding: 0;
+              width: 4rem;
+              height: 4rem;
+              // display: none;
+              opacity: 0;
+              transition: opacity 1s var(--transition-type);
+              position: absolute;
+              z-index: 1;
             }
             
            
@@ -130,12 +142,12 @@
           // height: calc(100vh - 5rem) !important;
           // width: calc(100vw - 5rem) !important;
           inset: 2.5rem !important;
-          transition: inset 1s ease-in-out;
+          transition: inset 1s var(--transition-type);
         }
         .image-wrapper{
-            right: 3rem !important;
+            right: 5rem !important;
             left: var(--left-container-width) !important;
-            transition: left 2s ease-in-out, right 2s ease-in-out;
+            transition: left 2s var(--transition-type), right 2s var(--transition-type);
             // width: calc(100% - var(--left-container-width));
             // background-color: red;
             // height: 50%;
@@ -148,8 +160,14 @@
             //     flex-shrink: 0;
             //     height: 100%;
             // }
+            img{
+                width: 100% !important;
+             }
         }
         .description-wrapper{
+          top: 3.5rem !important;
+          left: 9rem !important;
+          bottom: unset !important;
             // height: 30%;
             // order: 2;
             // .project-name{
@@ -162,11 +180,27 @@
             // }
         }
         .text-container{
-            opacity: 1;
-            display: block;
+          position: absolute;
+          top: 11rem;
+          left: 4rem;
+          right: 43%;
+          opacity: 1 !important;
+          transition: opacity 2s var(--transition-type) 2s;
+          p{
+            white-space: normal;
+            font-size: 1.2rem;
+          }
+          
         }
         .skills-list{
             // order: 3;
+        }
+        .btn-exit{
+          // display: block !important;
+          opacity: 1 !important;
+          top: 6rem !important;
+          left: 6rem !important;
+          
         }
       }
     }

@@ -1,4 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Code+Pro&display=swap');
-@import "scss/main"
+@import "scss/main";
+// :root{
+// 	--image-sequencer: "../../assets/hero-animation/0000.jpg";
+// }
+:root{
+	--image-sequencer: "./assets/hero-animation/0000.jpg";
+    // background-image: url("/src/assets/hero-animation/0000.jpg");
+}
+
+
+@keyframes myAnimation {
+	// from {
+	// 	opacity: 0;
+	// 	clip-path: inset(45% 20% 45% 20%);
+	// 	border: 10px solid red;
+	// }
+	// to {
+	// 	opacity: 1;
+	// 	clip-path: inset(0% 0% 0% 0%);
+	// 	border: 10px solid yellow;
+	// }
+
+    0%{
+        background-image: url("./assets/hero-animation/0000.jpg");
+    }
+    50%{
+        background-image: url("./assets/hero-animation/0010.jpg");
+    }
+    100%{
+        background-image: url("./assets/hero-animation/0150.jpg");
+    }
+}
+
+.revealing-image {
+	/* Create View Timeline */
+	view-timeline-name: --revealing-image;
+	view-timeline-axis: block;
+
+	/* Attach animation, linked to the  View Timeline */
+	animation: linear myAnimation both;
+	animation-timeline: --revealing-image;
+    border: 10px solid yellow;
+
+	/* Tweak range when effect should run*/
+	// animation-range: entry 25% cover 50%;
+
+
+	// height: 700px;
+	// width: 700px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    // animation: myAnimation 5s infinite;
+    width: 700px;
+    height: 700px;
+}
+
+.image-pusher{
+    height: 400vh;
+}

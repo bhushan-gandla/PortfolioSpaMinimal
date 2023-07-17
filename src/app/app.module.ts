@@ -8,6 +8,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { HeroComponent } from './hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AboutMeComponent,
     PortfolioComponent,
     GetInTouchComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

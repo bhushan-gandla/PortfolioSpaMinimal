@@ -1,52 +1,88 @@
+// html{
+//     scroll-snap-type: mandatory;
+//     scroll-snap-points-y: repeat(100vh);
+//    scroll-snap-type: y mandatory;
+// //    scroll-padding-top: var(--roles-y);
+// }
+// :root{
+//     --child-scroll-snap-align: start; //start
+// }
+// .child {
+//     scroll-snap-align: var(--child-scroll-snap-align);
+//     display: block;
+//     height: 100vh;
+//     // .first-child{
+//     //     position: static;
+//     //     top:0px;
+//     //     left: 0px;
+//     //     right: 100vw;
+//     //     // bottom: 100vh;
+//     // }
+// }
+// .h1{
+//     font-size: 3.5rem;
+//     font-weight: 600;
+//     letter-spacing: 1px;
+// }
+// section{
+//     --heading-height: 7.5rem;
+//     .heading{
+//         white-space: nowrap;
+//         overflow: hidden;
+//         width: 100%;
+//         padding: 2rem 0;
+//         margin: 0;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//         font-size: 3rem;
+//     }
+//     .content{
+//         height: calc(100vh - var(--heading-height));
+//         position: relative;
+//         top: var(--heading-height);
+//     }
+//     @include media-breakpoint-up(md){
+//         --heading-height: 10.75rem;
+//         .heading{
+//             padding: 3rem 0;
+//             font-size: 4rem;
+//         }
+//     }
+// }
+
+
+// new layout
 html{
-    scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(100vh);
-   scroll-snap-type: y mandatory;
-//    scroll-padding-top: var(--roles-y);
+    font-family: 'VT323', monospace;
 }
-:root{
-    --child-scroll-snap-align: start; //start
+.section-wrapper{
+    scroll-snap-type: y;
+    
 }
-.child {
-    scroll-snap-align: var(--child-scroll-snap-align);
-    display: block;
+.section-heading{
     height: 100vh;
-    // .first-child{
-    //     position: static;
-    //     top:0px;
-    //     left: 0px;
-    //     right: 100vw;
-    //     // bottom: 100vh;
-    // }
+    color: $secondary;
+    font-weight: 700;
+    font-size: 4rem;
+    overflow: hidden;
+    position: sticky;
+    top:0;
+    // clip-path: inset(100px 50px);
+    .lines{
+        // margin:0px -50px;
+        text-wrap: nowrap;
+        margin-left: -2rem;
+    }
 }
-.h1{
-    font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-section{
-    --heading-height: 7.5rem;
-    .heading{
-        white-space: nowrap;
-        overflow: hidden;
-        width: 100%;
-        padding: 2rem 0;
-        margin: 0;
-        position: absolute;
-        left: 0;
-        right: 0;
-        font-size: 3rem;
-    }
-    .content{
-        height: calc(100vh - var(--heading-height));
-        position: relative;
-        top: var(--heading-height);
-    }
-    @include media-breakpoint-up(md){
-        --heading-height: 10.75rem;
-        .heading{
-            padding: 3rem 0;
-            font-size: 4rem;
-        }
-    }
+.section-description{
+    height: 100vh;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.21);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.1px);
+    -webkit-backdrop-filter: blur(2.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    scroll-snap-align: start;
 }

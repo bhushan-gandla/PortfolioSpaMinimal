@@ -1,6 +1,6 @@
 
 $primary: #FF8114;
-$secondary: #7E7E7E;
+$secondary: #E3E3E3;
 $dark: #3C3838;
 
 
@@ -9,4 +9,10 @@ $dark: #3C3838;
     --border-gray: #707070;
     --skills-pill-bg-color: #e9e9e9;
     --skills-pill-img-bg-color: #c5c3c3;
+}
+
+
+// new layout
+:root{
+    --bs-font-sans-serif: 'Roboto Mono', monospace !important;
 }

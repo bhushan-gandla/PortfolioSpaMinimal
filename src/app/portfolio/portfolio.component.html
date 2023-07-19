@@ -1,85 +1,14 @@
-<div class="vh-100 position-relative">
-    <div class="">
-        <h2 class="h1 heading text-secondary">
-            <span>portfolio </span>
-            <span>portfolio </span>
-            <span class="text-dark">portfolio </span>
-            <span>portfolio </span>
-            <span>portfolio </span>
-            <span>portfolio </span>
-            <span>portfolio </span>
-        </h2>
-    </div>
-    <div class="content position-relative">
-        <ul class="list-unstyled portfolio-list" >
-            <li *ngFor='let portfolioItem of portfolioItems; let i = index;'>
-                <div class="portfolio-inner-wrapper">
-                    <div class="overlay-fullscreen-trigger" (click)="isFullScreen(portfolioItem, $event)"></div>
-                    <button class="btn btn-primary btn-exit" (click)="exitFullScreen(portfolioItem, $event)" aria-label="Exit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" class="bi bi-chevron-left pe-none" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-                          </svg>
-                    </button>
-                    <div class="border-wrapper">
-                        <div class="image-wrapper">
-                            <img [src]="portfolioItem.imageSrc" alt="...">
-                        </div>
-                        <div class="description-wrapper">
-                            <div class="project-name">{{portfolioItem.name}}</div>
-                            <div class="client-name">{{portfolioItem.client}}</div>
-                        </div>
-                        <div class="text-container" [innerHTML]="portfolioItem.content">
-                        </div>
-                        <ul class="skills-list list-unstyled d-flex flex-wrap">
-                            <ng-container *ngFor='let tool of portfolioItem.toolsUsed'>
-                                <li class="tool-item" [class]="tool.toolClass">
-                                    <div class="icon"></div>
-                                    <div class="tool-name"> 
-                                        {{tool.toolName}}
-                                    </div>
-                                </li>
-                            </ng-container>
-                        </ul>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <!-- <ng-container *ngFor='let portfolioItem of portfolioItems'>
-            {{portfolioItem.name}}
-        </ng-container> -->
-    </div>
-</div>
-
-
-
-
-<!-- <div id="carouselExampleCaptions" class="carousel slide portfolio-carousel" data-bs-ride="false">
-    <div class="carousel-inner">
-        <ng-container *ngFor='let portfolioItem of portfolioItems; let i = index;'>
-            <div class="carousel-item bg-secondary" [ngClass]="{'active': i === 0}">
-              <img [src]="portfolioItem.imageSrc" class="d-block w-50" alt="...">
-              <div class="carousel-caption d-none d-md-block">
-                <h5>{{portfolioItem.name}}</h5>
-
-                <ng-container *ngFor='let tool of portfolioItem.toolsUsed'>
-                    <li class="tool-item" [class]="tool.toolClass">
-                        <div class="icon"></div>
-                        <div class="tool-name"> 
-                            {{tool.toolName}}
-                        </div>
-                    </li>
-                </ng-container>
-
-              </div>
-            </div>
-        </ng-container>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div> -->
+ <section class="section-wrapper">
+     <div class="section-heading bg-white">
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+        <div class="lines">portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio   portfolio  portfolio</div> 
+     </div>
+ </section>   

@@ -1,4 +1,44 @@
 <div class="portfolio-section-bg"></div>
- <section class="section-wrapper portfolio-section">
-  <h1>dsfdsfds</h1> 
+ <section  class="section-wrapper portfolio-section">
+  <!-- <h1 class="portfolio-title">dsfdsfds</h1>  -->
+  <section id="sectionPin">
+
+      <div class="pin-wrap-sticky">
+        <div class="pin-wrap">
+            <ul class="list-unstyled portfolio-list" >
+                <li *ngFor='let portfolioItem of portfolioItems; let i = index;'>
+                    <div class="portfolio-inner-wrapper">
+                        <div class="overlay-fullscreen-trigger" (click)="isFullScreen(portfolioItem, $event)"></div>
+                        <button class="btn btn-primary btn-exit" (click)="exitFullScreen(portfolioItem, $event)" aria-label="Exit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" class="bi bi-chevron-left pe-none" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                              </svg>
+                        </button>
+                        <div class="border-wrapper">
+                            <div class="image-wrapper">
+                                <img [src]="portfolioItem.imageSrc" alt="...">
+                            </div>
+                            <div class="description-wrapper">
+                                <div class="project-name">{{portfolioItem.name}}</div>
+                                <div class="client-name">{{portfolioItem.client}}</div>
+                            </div>
+                            <div class="text-container" [innerHTML]="portfolioItem.content">
+                            </div>
+                            <ul class="skills-list list-unstyled d-flex flex-wrap">
+                                <ng-container *ngFor='let tool of portfolioItem.toolsUsed'>
+                                    <li class="tool-item" [class]="tool.toolClass">
+                                        <div class="icon"></div>
+                                        <div class="tool-name"> 
+                                            {{tool.toolName}}
+                                        </div>
+                                    </li>
+                                </ng-container>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+  </section>
  </section>   

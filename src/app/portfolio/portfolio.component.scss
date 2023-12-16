@@ -39,6 +39,7 @@
         margin-right: 4rem;
         
         .portfolio-inner-wrapper{
+         
             background-color: #fff;
             width: var(--portfolio-item-width);
             height: var(--portfolio-item-height);
@@ -46,7 +47,7 @@
             // transition: position 1s linear, height 2s linear 4s, width 2s linear 4s, inset 2s linear 4s;
             transition: height 2s var(--transition-type), width 2s var(--transition-type), position 2s var(--transition-type), top 2s var(--transition-type),  left 2s var(--transition-type) ;
             container-type: inline-size;
-      
+            backdrop-filter: blur(2px);
             
             .border-wrapper{
                 padding: 2.5rem;

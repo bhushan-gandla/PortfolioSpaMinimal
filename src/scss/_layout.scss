@@ -154,34 +154,90 @@ $shadows-big: multiple-box-shadow(100);
 /*
 Name: StarWarsIntro.css
 */
+.star-wars-intro {
+  width: 100vw;
+  height: 100vh;
+  font-weight: 700;
+  color: #EBD71C;
+  overflow: hidden;
+  position: fixed;
+}
 
-  
-  .star-wars-intro {
-    width: 100vw;
-    height: 100vh;
-    font-weight: 700;
-    color: #EBD71C;
-    overflow: hidden;
-    position: fixed;
-  }
-  
-  .star-wars-intro .main-content{
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    z-index: 3;
-    width: 98%;
-    height: 50em;
-    bottom: 0;
-    font-size: 80px;
-    font-weight: bold;
-    text-align: center;
-    overflow: hidden;
-    transform-origin: 50% 100%;
-    transform: perspective(350px) rotateX(25deg);
-  }
+.star-wars-intro .main-content{
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  z-index: 3;
+  width: 98%;
+  height: 50em;
+  bottom: 0;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(350px) rotateX(25deg);
+}
 
-  
+
+.star-wars-intro .title-content {
+  position: absolute;
+  top: 100%;
+
+  animation: scroll auto linear;
+  animation-timeline: --html-timeline;
+}
+
+.star-wars-intro .title-content > .content-header {
+  text-align: center;
+  margin-bottom: 24rem;
+}
+
+/* Main Image Styles */
+
+.star-wars-intro .main-logo {
+  position: absolute;
+  width: 2.6em;
+  left: 50%;
+  top: 20vh;
+  font-size: 10em;
+  text-align: center;
+  margin-left: -1.3em;
+  line-height: 0.8em;
+  letter-spacing: -0.05em;
+  color: #000;
+  text-shadow: -2px -2px 0 #EBD71C, 2px -2px 0 #EBD71C, -2px 2px 0 #EBD71C, 2px 2px 0 #EBD71C;
+  opacity: 0;
+  z-index: 1;
+  -webkit-animation: logo 5s ease-out 2.5s;
+  -moz-animation: logo 5s ease-out 2.5s;
+  -ms-animation: logo 5s ease-out 2.5s;
+  -o-animation: logo 5s ease-out 2.5s;
+  animation: logo 5s ease-out 2.5s;
+}
+
+.star-wars-intro .main-logo > img {
+  max-width: 100%;
+}
+
+
+@keyframes scroll {
+  0% { 
+    top: 100%; 
+    color: pink;
+  }
+  100% { 
+    top: -170%; 
+
+    color: greenyellow;
+
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .star-wars-intro .main-content {
+    font-size: 35px;
+  }
   .star-wars-intro .title-content {
     position: absolute;
     top: 100%;
@@ -189,62 +245,49 @@ Name: StarWarsIntro.css
     animation: scroll auto linear;
     animation-timeline: --html-timeline;
   }
-  
-  .star-wars-intro .title-content > .content-header {
-    text-align: center;
-    margin-bottom: 24rem;
-  }
-  
-  /* Main Image Styles */
-  
-  .star-wars-intro .main-logo {
-    position: absolute;
-    width: 2.6em;
-    left: 50%;
-    top: 20vh;
-    font-size: 10em;
-    text-align: center;
-    margin-left: -1.3em;
-    line-height: 0.8em;
-    letter-spacing: -0.05em;
-    color: #000;
-    text-shadow: -2px -2px 0 #EBD71C, 2px -2px 0 #EBD71C, -2px 2px 0 #EBD71C, 2px 2px 0 #EBD71C;
-    opacity: 0;
-    z-index: 1;
-    -webkit-animation: logo 5s ease-out 2.5s;
-    -moz-animation: logo 5s ease-out 2.5s;
-    -ms-animation: logo 5s ease-out 2.5s;
-    -o-animation: logo 5s ease-out 2.5s;
-    animation: logo 5s ease-out 2.5s;
-  }
-  
-  .star-wars-intro .main-logo > img {
-    max-width: 100%;
-  }
-  
-  
-  @keyframes scroll {
-    0% { 
-      top: 100%; 
-      color: pink;
-    }
-    100% { 
-      top: -170%; 
+}
 
-      color: greenyellow;
+// portfolio
+.portfolio-title{
+  position: absolute;
+}
+@keyframes move {
+	to {
+		/* Move horizontally so that right edge is aligned against the viewport */
+		transform: translateX(calc(-100% + 100vw));
+		left: 0px;
+	}
+}
 
-    }
-  }
-  
-  @media screen and (max-width: 720px) {
-    .star-wars-intro .main-content {
-      font-size: 35px;
-    }
-    .star-wars-intro .title-content {
-      position: absolute;
-      top: 100%;
+#sectionPin {
+	/* Stretch it out, so that we create room for the horizontal scroll animation */
+	height: 500vh;
+	overflow: visible; /* To make position sticky work … */
 
-      animation: scroll auto linear;
-	    animation-timeline: --html-timeline;
-    }
-  }
+	view-timeline-name: --section-pin-tl;
+	view-timeline-axis: block;
+}
+
+.pin-wrap-sticky {
+	/* Stick to Top */
+	height: 100vh;
+	width: 100vw;
+	position: sticky;
+	top: 0;
+
+	width: 100vw;
+	overflow-x: hidden;
+}
+
+.pin-wrap {
+	height: 100vh;
+	width: 250vmax;
+
+	/* Hook animation */
+	will-change: transform;
+	animation: linear move forwards;
+
+	/* Link animation to view-timeline */
+	animation-timeline: --section-pin-tl;
+	animation-range: contain 0% contain 100%;
+}
